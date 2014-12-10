@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+lib_path = File.expand_path('../../lib', __FILE__)
+$:.unshift(lib_path)
+
+require 'acappella'
+
+ACappella::Client.new(ARGV[0]).send(ARGV[1])
