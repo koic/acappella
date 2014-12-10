@@ -10,6 +10,8 @@ module ACappella
       songwriter = DRb::DRbObject.new_with_uri(@uri)
 
       songwriter.write(lyrics)
+    rescue => e
+      puts e.message
     end
   end
 end
