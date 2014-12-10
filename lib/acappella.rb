@@ -1,5 +1,6 @@
 module ACappella; end
 require 'acappella/client'
-require 'acappella/requester'
 require 'acappella/server'
+require 'acappella/set_list'
 require 'acappella/singer'
+require 'acappella/songwriter'

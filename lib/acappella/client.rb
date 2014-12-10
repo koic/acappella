@@ -7,9 +7,9 @@ module ACappella
     end
 
     def send(lyrics)
-      singer = DRb::DRbObject.new_with_uri(@uri)
+      songwriter = DRb::DRbObject.new_with_uri(@uri)
 
-      singer.sing(lyrics)
+      songwriter.write(lyrics)
     end
   end
 end
