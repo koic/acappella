@@ -4,5 +4,8 @@ lib_path = File.expand_path('../../lib', __FILE__)
 $:.unshift(lib_path)
 
 require 'acappella'
+require 'optparse'
 
-ACappella::Server.new(ARGV[0]).start
+options = ARGV.getopts('u:', 'uri:')
+
+ACappella::Server.new(options['u']).start
