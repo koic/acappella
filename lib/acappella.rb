@@ -1,4 +1,5 @@
 module ACappella; end
+
 require 'acappella/client'
 require 'acappella/server'
 require 'acappella/set_list'
