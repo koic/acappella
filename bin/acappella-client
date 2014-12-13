@@ -4,10 +4,13 @@ lib_path = File.expand_path('../../lib', __FILE__)
 $:.unshift(lib_path)
 
 require 'acappella'
+require 'uri'
 
 options = ACappella::OptionParser.parse(ARGV)
 
-client = ACappella::Client.new("druby://#{options[:host]}:#{options[:port]}")
+uri = URI.parse("druby://#{options[:host]}:#{options[:port]}")
+
+client = ACappella::Client.new(uri.to_s)
 
 loop do
   message = STDIN.readline
