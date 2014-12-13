@@ -12,10 +12,14 @@ uri = URI.parse("druby://#{options[:host]}:#{options[:port]}")
 
 server = ACappella::Server.new(uri.to_s)
 
+puts 'Ctrl-C to shutdown server'
+
 Signal.trap(:INT) do
+  puts; puts('Stopping ...')
+
   server.stop
 
-  puts; puts('bye'); exit(false)
+  puts('Exiting ...'); exit(false)
 end
 
 server.start

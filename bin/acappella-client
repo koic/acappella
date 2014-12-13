@@ -12,7 +12,15 @@ uri = URI.parse("druby://#{options[:host]}:#{options[:port]}")
 
 client = ACappella::Client.new(uri.to_s)
 
+puts "Connect to #{options[:host]}:#{options[:port]}"
+
+Signal.trap(:INT) { puts; puts('bye'); exit(false) }
+
+puts 'Ctrl-C to exit console'
+
 loop do
+  print '> '
+
   message = STDIN.readline
 
   client.send(message)
