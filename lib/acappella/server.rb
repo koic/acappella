@@ -18,6 +18,16 @@ module ACappella
       puts "acappella #{ACappella::VERSION} starting on #{DRb.uri}"
       puts "Run `acappella-server --help` for more startup options"
 
+      Signal.trap(:INT) do
+        puts; puts('Stopping ...')
+
+        @server.stop_service
+
+        puts('Exiting ...'); exit(false)
+      end
+
+      puts 'Ctrl-C to shutdown server'
+
       loop do
         if song = @set_list.next_song
           @singer.sing(song)
