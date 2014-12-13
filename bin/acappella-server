@@ -6,7 +6,7 @@ $:.unshift(lib_path)
 require 'acappella'
 require 'uri'
 
-options = ACappella::OptionParser.parse(ARGV)
+options = ACappella::OptionParser.parse(ARGV) rescue exit(false)
 
 uri = URI.parse("druby://#{options[:host]}:#{options[:port]}")
 

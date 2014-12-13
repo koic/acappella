@@ -16,6 +16,10 @@ module ACappella
       opt.parse!(argv)
 
       options
+    rescue ::OptionParser::MissingArgument => e
+      puts opt.help
+
+      raise e
     end
   end
 end

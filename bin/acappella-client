@@ -7,7 +7,7 @@ require 'acappella'
 require 'readline'
 require 'uri'
 
-options = ACappella::OptionParser.parse(ARGV)
+options = ACappella::OptionParser.parse(ARGV) rescue exit(false)
 
 uri = URI.parse("druby://#{options[:host]}:#{options[:port]}")
 
