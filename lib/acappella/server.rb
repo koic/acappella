@@ -15,7 +15,8 @@ module ACappella
     def start
       @server = DRb.start_service(@uri, @songwriter)
 
-      puts DRb.uri
+      puts "acappella #{ACappella::VERSION} starting on #{DRb.uri}"
+      puts "Run `acappella-server --help` for more startup options"
 
       loop do
         if song = @set_list.next_song
