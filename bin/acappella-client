@@ -4,6 +4,7 @@ lib_path = File.expand_path('../../lib', __FILE__)
 $:.unshift(lib_path)
 
 require 'acappella'
+require 'readline'
 require 'uri'
 
 options = ACappella::OptionParser.parse(ARGV)
@@ -14,14 +15,10 @@ client = ACappella::Client.new(uri.to_s)
 
 puts "Connect to #{uri}"
 
-Signal.trap(:INT) { puts; puts('bye'); exit(false) }
+Signal.trap(:EXIT) { puts; exit(false) }
 
-puts 'Ctrl-C to exit console'
+puts 'Ctrl-D to exit console'
 
-loop do
-  print '> '
-
-  message = STDIN.readline
-
+while message = Readline.readline('> ', true)
   client.send(message)
 end
