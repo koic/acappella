@@ -17,7 +17,7 @@ puts "Connect to #{uri}"
 
 Signal.trap(:EXIT) { puts; exit(false) }
 
-puts 'Ctrl-D to exit console'
+puts 'Ctrl-D to exit'
 
 while message = Readline.readline('> ', true)
   client.send(message)
