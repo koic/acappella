@@ -34,9 +34,5 @@ module ACappella
         end
       end
     end
-
-    def stop
-      @server.stop_service
-    end
   end
 end
