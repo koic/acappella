@@ -10,4 +10,12 @@ options = ACappella::OptionParser.parse(ARGV)
 
 uri = URI.parse("druby://#{options[:host]}:#{options[:port]}")
 
-ACappella::Server.new(uri.to_s).start
+server = ACappella::Server.new(uri.to_s)
+
+Signal.trap(:INT) do
+  server.stop
+
+  puts; puts('bye'); exit(false)
+end
+
+server.start

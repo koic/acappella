@@ -13,7 +13,7 @@ module ACappella
     end
 
     def start
-      DRb.start_service(@uri, @songwriter)
+      @server = DRb.start_service(@uri, @songwriter)
 
       puts DRb.uri
 
@@ -22,6 +22,10 @@ module ACappella
           @singer.sing(song)
         end
       end
+    end
+
+    def stop
+      @server.stop_service
     end
   end
 end
