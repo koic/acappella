@@ -20,7 +20,7 @@ module ACappella
       @server = DRb.start_service(@uri, @songwriter)
 
       puts "acappella #{ACappella::VERSION} starting on #{DRb.uri}"
-      puts "Run `acappella-server --help` for more startup options"
+      puts 'Run `acappella-server --help` for more startup options'
 
       Signal.trap(:INT) do
         puts; puts('Stopping ...')
