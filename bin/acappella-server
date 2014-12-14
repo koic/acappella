@@ -4,12 +4,9 @@ lib_path = File.expand_path('../../lib', __FILE__)
 $:.unshift(lib_path)
 
 require 'acappella'
-require 'uri'
 
 options = ACappella::OptionParser.parse(ARGV) rescue exit(false)
 
-uri = URI.parse("druby://#{options[:host]}:#{options[:port]}")
-
-server = ACappella::Server.new(uri.to_s)
+server = ACappella::Server.new(options)
 
 server.start

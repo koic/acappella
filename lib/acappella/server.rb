@@ -1,9 +1,13 @@
 require 'drb/drb'
+require 'uri'
 
 module ACappella
   class Server
-    def initialize(uri)
-      @uri = uri
+    def initialize(options = {})
+      host = options[:host] || 'localhost'
+      port = options[:port] || '8989'
+
+      @uri = URI.parse("druby://#{host}:#{port}").to_s
 
       @set_list = SetList.new
 

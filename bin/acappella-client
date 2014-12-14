@@ -5,15 +5,10 @@ $:.unshift(lib_path)
 
 require 'acappella'
 require 'readline'
-require 'uri'
 
 options = ACappella::OptionParser.parse(ARGV) rescue exit(false)
 
-uri = URI.parse("druby://#{options[:host]}:#{options[:port]}")
-
-client = ACappella::Client.new(uri.to_s)
-
-puts "Connect to #{uri}"
+client = ACappella::Client.new(options)
 
 Signal.trap(:EXIT) { puts; exit(false) }
 
