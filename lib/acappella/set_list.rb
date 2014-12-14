@@ -4,8 +4,8 @@ module ACappella
       @songs = []
     end
 
-    def request(lyrics)
-      @songs << lyrics
+    def request(song)
+      @songs << song
     end
 
     def next_song

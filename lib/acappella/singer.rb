@@ -9,9 +9,9 @@ module ACappella
     private
 
     def logging(lyrics)
-      sung_at = Time.now.strftime('%Y-%m-%d %H:%M:%S')
+      sang_at = Time.now.strftime('%Y-%m-%d %H:%M:%S')
 
-      puts [sung_at, lyrics].join("\t")
+      puts [sang_at, lyrics].join("\t")
     end
   end
 end
