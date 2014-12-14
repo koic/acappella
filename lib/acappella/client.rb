@@ -7,15 +7,15 @@ module ACappella
       host = options[:host] || 'localhost'
       port = options[:port] || '8989'
 
-      @uri = URI.parse("druby://#{host}:#{port}").to_s
+      uri = URI.parse("druby://#{host}:#{port}").to_s
 
-      puts "Connect to #{@uri}"
+      puts "Connect to #{uri}"
+
+      @songwriter = DRb::DRbObject.new_with_uri(uri)
     end
 
     def send(lyrics)
-      songwriter = DRb::DRbObject.new_with_uri(@uri)
-
-      songwriter.write(lyrics)
+      @songwriter.write(lyrics)
     rescue => e
       puts e.message
     end
