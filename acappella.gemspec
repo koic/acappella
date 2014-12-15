@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
 
   s.authors = ['Koichi ITO']
-  s.date = '2014-12-15'
+  s.date = '2014-12-16'
   s.description = 'A client-server model talk tool. Server speak characters that client was typing.'
   s.email = 'koic.ito@gmail.com'
   s.files = [

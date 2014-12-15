@@ -14,7 +14,7 @@ $ gem install acappella
 
 ```
 $ acappella-server
-acappella 0.0.1 starting on druby://localhost:8989
+acappella 0.1.0 starting on druby://localhost:8989
 Run `acappella-server --help` for more startup options
 Ctrl-C to shutdown server
 ```
