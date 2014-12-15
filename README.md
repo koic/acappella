@@ -24,6 +24,7 @@ Ctrl-C to shutdown server
 ```
 $ acappella-client
 Connect to druby://localhost:8989
+Run `acappella-client --help` for more startup options
 Ctrl-D to exit
 > words you want to talk
 ```
