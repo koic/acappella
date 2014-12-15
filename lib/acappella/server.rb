@@ -4,8 +4,8 @@ require 'uri'
 module ACappella
   class Server
     def initialize(options = {})
-      host = options[:host] || 'localhost'
-      port = options[:port] || '8989'
+      host  = options[:host]  || 'localhost'
+      port  = options[:port]  || '8989'
       voice = options[:voice] || ACappella::VoiceType::DEFAULT_VOICE
 
       @uri = URI.parse("druby://#{host}:#{port}").to_s
