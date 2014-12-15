@@ -6,7 +6,8 @@ $:.unshift(lib_path)
 require 'acappella'
 require 'readline'
 
-options = ACappella::OptionParser.parse(ARGV) rescue exit(false)
+option_parser = ACappella::OptionParser.new
+options = option_parser.parse!(ARGV) rescue exit(false)
 
 client = ACappella::Client.new(options)
 

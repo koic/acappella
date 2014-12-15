@@ -6,6 +6,7 @@ module ACappella
     def initialize(options = {})
       host = options[:host] || 'localhost'
       port = options[:port] || '8989'
+      voice = options[:voice] || ACappella::VoiceType::DEFAULT_VOICE
 
       @uri = URI.parse("druby://#{host}:#{port}").to_s
 
@@ -13,7 +14,7 @@ module ACappella
 
       @songwriter = Songwriter.new(@set_list)
 
-      @singer = Singer.new
+      @singer = Singer.new(voice)
     end
 
     def start

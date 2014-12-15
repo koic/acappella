@@ -5,8 +5,19 @@ $:.unshift(lib_path)
 
 require 'acappella'
 
-options = ACappella::OptionParser.parse(ARGV) rescue exit(false)
+option_parser = ACappella::OptionParser.new
+option_parser.add_option('-v', '--voice=VAL')
 
-server = ACappella::Server.new(options)
+options = option_parser.parse!(ARGV) rescue exit(false)
+
+begin
+  server = ACappella::Server.new(options)
+rescue ACappella::VoiceTypeError => e
+  quoted_voice_names = ACappella::VoiceType::VOICE_VARIATIONS.map {|v| "'#{v}'" }
+
+  puts "#{e.message} --voice=VAL accepts #{quoted_voice_names.join(', ')}."
+
+  exit(false)
+end
 
 server.start
