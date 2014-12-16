@@ -13,7 +13,7 @@ options = option_parser.parse!(ARGV) rescue exit(false)
 begin
   server = ACappella::Server.new(options)
 rescue ACappella::VoiceTypeError => e
-  quoted_voice_names = ACappella::VoiceType::VOICE_VARIATIONS.map {|v| "'#{v}'" }
+  quoted_voice_names = ACappella::VoiceType::types.map {|v| "'#{v}'" }
 
   puts "#{e.message} --voice=VAL accepts #{quoted_voice_names.join(', ')}."
 

@@ -3,9 +3,9 @@ require 'shellwords'
 module ACappella
   class Singer
     def initialize(voice)
-      raise ACappella::VoiceTypeError.new("can't sing voice.") unless valid_voice?(voice)
+      @voice = voice || ACappella::VoiceType::default
 
-      @voice = voice
+      raise ACappella::VoiceTypeError.new("can't sing voice.") unless ACappella::VoiceType::valid?(@voice)
     end
 
     def sing(lyrics)
@@ -17,10 +17,6 @@ module ACappella
     end
 
     private
-
-    def valid_voice?(voice)
-      ACappella::VoiceType::VOICE_VARIATIONS.include?(voice)
-    end
 
     def logging(lyrics)
       sang_at = Time.now.strftime('%Y-%m-%d %H:%M:%S')
