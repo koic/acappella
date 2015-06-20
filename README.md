@@ -1,4 +1,4 @@
-# A Cappella
+# A Cappella [![Gem Version](https://badge.fury.io/rb/acappella.svg)](http://badge.fury.io/rb/acappella)
 
 A client-server model talk tool. Server speak characters that client was typing.
 
