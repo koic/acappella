@@ -8,7 +8,7 @@ require 'acappella'
 option_parser = ACappella::OptionParser.new
 option_parser.add_option('-v', '--voice=VAL')
 
-options = option_parser.parse!(ARGV) rescue exit(false)
+options = option_parser.parse!(ARGV) rescue exit!
 
 begin
   server = ACappella::Server.new(options)
@@ -17,7 +17,7 @@ rescue ACappella::VoiceTypeError => e
 
   puts "#{e.message} --voice=VAL accepts #{quoted_voice_names.join(', ')}."
 
-  exit(false)
+  exit!
 end
 
 server.start

@@ -27,7 +27,7 @@ module ACappella
 
         @server.stop_service
 
-        puts('Exiting ...'); exit(false)
+        puts('Exiting ...'); exit!
       end
 
       puts 'Ctrl-C to shutdown server'

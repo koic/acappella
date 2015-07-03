@@ -7,11 +7,11 @@ require 'acappella'
 require 'readline'
 
 option_parser = ACappella::OptionParser.new
-options = option_parser.parse!(ARGV) rescue exit(false)
+options = option_parser.parse!(ARGV) rescue exit!
 
 client = ACappella::Client.new(options)
 
-Signal.trap(:EXIT) { puts; exit(false) }
+Signal.trap(:EXIT) { puts; exit! }
 
 puts 'Ctrl-D to exit'
 
