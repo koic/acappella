@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    acappella (0.1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  acappella!
+
+BUNDLED WITH
+   1.10.4
