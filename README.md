@@ -33,6 +33,10 @@ Ctrl-D to exit
 
 Mac OS X (only)
 
+## Presentation Document
+
+* The making of a story (Japanese text) ... http://www.slideshare.net/koic/the-world-is-connected
+
 ## LICENCE
 
 The MIT Licence
