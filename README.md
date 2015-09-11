@@ -37,10 +37,6 @@ Mac OS X (only)
 
 * The making of a story (Japanese text) ... http://www.slideshare.net/koic/the-world-is-connected
 
-## LICENCE
-
-The MIT Licence
-
 ## Contributing
 
 1. Fork it
@@ -48,3 +44,7 @@ The MIT Licence
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## License
+
+A Cappella is released under the [MIT License](http://www.opensource.org/licenses/MIT).
